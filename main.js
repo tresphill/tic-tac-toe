@@ -7,7 +7,7 @@ const startCells = [
 ]
 
 let turn = "circle"
-infoDisplay.textContent = "Circle goes first!"
+infoDisplay.textContent = "Circle goes first!" // rendering player turn text
 
 // function for rendering board
 
@@ -26,6 +26,8 @@ createBoard()
 
 function addTurn(e){
     const goTurn = document.createElement('div') // function for creating circle div
-    goTurn.classList.add('circle') // adding class of 'circle'
-    e.target.append(goTurn) // targeting thr event listener 
+    goTurn.classList.add(turn) // circle goes first on start
+    e.target.append(turnDisplay) // targeting thr event listener 
+    turn = turn === "circle" ? "x" : "circle" // function for if turn = circle, go, else x turn
+    infoDisplay.textContent = "It is now " + turn + "'s turn." // concatenating turn text
 }
