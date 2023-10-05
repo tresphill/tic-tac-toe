@@ -21,3 +21,20 @@ list of winning arrays?? (8 in total)
 innerText to render whose turn it is??
 display winner text??
 
+<<<<<<< HEAD
+=======
+
+
+
+
+![image0(2)](https://github.com/tresphill/tic-tac-toe/assets/142924200/534a7721-f536-4814-8c28-6229c152e371)
+
+
+
+
+
+
+
+
+
+>>>>>>> 399e3073acea6b6eb192b2a20a927c8abc77ccf6
