@@ -35,8 +35,22 @@ function addTurn(e){
 
 // function for winning combos
 // arrays are all correct, not sure why its not functioning
+// function for selecting every array to check against winning combo
+
 function checkScore(){
+    const allSquares = document.querySelectorAll('.square') 
     const winningCombos = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
     ]
+
+    winningCombos.forEach(array => { // function for winning combos
+        let circleWins = array.every(cell => 
+            allSquares[cell].firstChild?.classList.contains('circle')) // checking index of all arrays that also contain class of circle
+
+        if (circleWins) { // if circle wins, display text
+            infoDisplay.textContent = "Circle wins!"
+            allSquares.forEach(square => square.removeEventListener) // removing event listener after game ends
+
+        }
+    })
 }
