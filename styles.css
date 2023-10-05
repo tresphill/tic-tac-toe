@@ -17,6 +17,7 @@ body {
     flex-wrap: wrap;
     /* border: solid 1px black; */
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .square{
@@ -29,6 +30,25 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    -webkit-animation: flip 1s;
+    animation: flip 1s ease 300ms;
+}
+
+@-webkit-keyframes flip {
+    from {
+        transform: rotateY(90deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+@keyframes flip {
+    from {
+        transform: rotateY(90deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
 }
 
 .circle {
