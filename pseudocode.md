@@ -20,3 +20,18 @@ click handlers to render move selection x or o
 list of winning arrays?? (8 in total)
 innerText to render whose turn it is??
 display winner text??
+
+
+
+
+
+![image0(2)](https://github.com/tresphill/tic-tac-toe/assets/142924200/534a7721-f536-4814-8c28-6229c152e371)
+
+
+
+
+
+
+
+
+
