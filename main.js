@@ -25,9 +25,10 @@ createBoard()
 // function for adding moves to gameboard
 
 function addTurn(e){
-    const goTurn = document.createElement('div') // function for creating circle div
-    goTurn.classList.add(turn) // circle goes first on start
+    const turnDisplay = document.createElement('div') // function for creating circle div
+    turnDisplay.classList.add(turn) // circle goes first on start
     e.target.append(turnDisplay) // targeting thr event listener 
     turn = turn === "circle" ? "x" : "circle" // function for if turn = circle, go, else x turn
     infoDisplay.textContent = "It is now " + turn + "'s turn." // concatenating turn text
+    e.target.removeEventListener('click', addTurn)
 }
