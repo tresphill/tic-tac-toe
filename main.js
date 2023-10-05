@@ -25,10 +25,18 @@ createBoard()
 // function for adding moves to gameboard
 
 function addTurn(e){
-    const turnDisplay = document.createElement('div') // function for creating circle div
-    turnDisplay.classList.add(turn) // circle goes first on start
-    e.target.append(turnDisplay) // targeting thr event listener 
+    const turnDisplay = document.createElement('div') // function for creating turn div
+    turnDisplay.classList.add(turn) // displaying circle goes first on start
+    e.target.append(turnDisplay) // targeting the event listener 
     turn = turn === "circle" ? "x" : "circle" // function for if turn = circle, go, else x turn
-    infoDisplay.textContent = "It is now " + turn + "'s turn." // concatenating turn text
-    e.target.removeEventListener('click', addTurn)
+    infoDisplay.textContent = "It's now " + turn + "'s turn." // concatenating turn text
+    e.target.removeEventListener('click', addTurn) // this removes the ability to reclick a cell thats already been played
+}
+
+// function for winning combos
+// arrays are all correct, not sure why its not functioning
+function checkScore(){
+    const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+    ]
 }
