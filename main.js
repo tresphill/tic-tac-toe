@@ -6,6 +6,9 @@ const startCells = [
     "", "", "", "", "", "", "", "", "",
 ]
 
+let turn = "circle"
+infoDisplay.textContent = "Circle goes first!"
+
 // function for rendering board
 
 function createBoard(){

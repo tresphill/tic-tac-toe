@@ -35,3 +35,30 @@ body {
     border: 15px solid green;
     box-sizing: border-box;
 }
+
+.x {
+    height: 90px;
+    width: 90px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.x:before, .x:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+}
+
+.x:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.x:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
