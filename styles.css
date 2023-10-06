@@ -30,11 +30,18 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    -webkit-animation: flip 1s;
+    /* -webkit-animation: flip 1s;
     animation: flip 1s ease 300ms;
+    animation-fill-mode: forwards; */
+    transition: 200ms;
 }
 
-@-webkit-keyframes flip {
+.square:hover {
+    transform: scale(1.2);
+    box-shadow: 0 5px 5px 0px;
+}
+
+/* @-webkit-keyframes flip {
     from {
         transform: rotateY(90deg);
     }
@@ -49,15 +56,15 @@ body {
     to {
         transform: rotateY(0deg);
     }
-}
+} */
 
 .circle {
     height: 90px;
     width: 90px;
     border-radius: 50%;
-    border: 15px solid green;
+    border: 15px solid #ff86ba;
     box-sizing: border-box;
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 10px black inset;
 }
 
 .x {
@@ -67,23 +74,24 @@ body {
     transform: rotate(45deg);
 }
 
-.x:before, .x:after {
+.x::before, .x:after {
     content: "";
     position: absolute;
-    background-color: red;
-    box-shadow: 2px 2px 2px black;
+    background-color: #71b4ff;
+    box-shadow: 2px 2px 10px black inset;
 }
 
-.x:before {
+.x::before {
     left: 50%;
     width: 30%;
     margin-left: -15%;
     height: 100%;
 }
 
-.x:after {
+.x::after {
     top: 50%;
     height: 30%;
     margin-top: -15%;
     width: 100%;
 }
+
