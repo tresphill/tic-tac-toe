@@ -9,6 +9,12 @@ body {
     background: radial-gradient(#eeaeca, #94bbe9);
 }
 
+/* @media (max-width: 500px) {
+    all {
+        #gameboard
+    }
+} */
+
 h1 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
