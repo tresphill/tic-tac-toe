@@ -18,6 +18,7 @@ function createBoard() {
         cellElement.id = index // assigning id to divs
         cellElement.addEventListener('click', addTurn) // adding event listener to each click ona  cell, running function addTurn
         gameBoard.append(cellElement) // appending cell to div
+        infoDisplay.textContent = "Tic-Tac-Toe"
     })
 }
 createBoard()
@@ -50,12 +51,18 @@ function checkScore() {
 
         if (circleWins) { // if circle wins, display text
             infoDisplay.textContent = "Circle wins!"
-            allSquares.forEach(square => square.removeEventListener) // removing event listener after game ends
+            allSquares.forEach(square => square.removeEventListener) // tried MDN model of removing and it broke
+            return
         }
-        // else (xWins){ // if x wins, display text
-        //     infoDisplay.textContent = "X wins!"
-        //     allSquares.forEach(square => square.removeEventListener) // removing event listener after game ends
-        // }
+    })
+    winningCombos.forEach(array => { // function for winning combos
+        let xWins = array.every(cell =>
+            allSquares[cell].firstChild?.classList.contains('x')) // checking index of all arrays that also contain class of x
 
+        if (xWins) { // if x wins, display text
+            infoDisplay.textContent = "X wins!"
+            allSquares.forEach(square => square.removeEventListener) // tried MDN model of removing and it broke
+            return
+        }
     })
 }
