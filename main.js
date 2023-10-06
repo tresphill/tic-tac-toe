@@ -68,8 +68,14 @@ function checkScore() {
             return
         }
     })
+
+    if (draw) {
+        draw = Array.from(allSquares).every(square => square.firstChild.classList.contains('circle') || square.firstChild.classList.contains('x'));
+    }
+
     if (draw) {
         // if all squares are filled and no player has won, it's a draw
         infoDisplay.textContent = "It's a draw!";
+        allSquares.forEach(square => square.removeEventListener('click', handleClick));
 }
 }
