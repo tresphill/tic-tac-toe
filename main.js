@@ -18,7 +18,6 @@ function createBoard() {
         cellElement.id = index // assigning id to divs
         cellElement.addEventListener('click', addTurn) // adding event listener to each click ona  cell, running function addTurn
         gameBoard.append(cellElement) // appending cell to div
-        infoDisplay.textContent = "Tic-Tac-Toe"
     })
 }
 createBoard()
