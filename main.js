@@ -44,12 +44,15 @@ function checkScore() {
         [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
     ]
 
+    let draw = true; // assuming its a draw from init
+
     winningCombos.forEach(array => { // function for winning combos
         let circleWins = array.every(cell =>
             allSquares[cell].firstChild?.classList.contains('circle')) // checking index of all arrays that also contain class of circle
 
         if (circleWins) { // if circle wins, display text
             infoDisplay.textContent = "Circle wins!"
+            draw = false;
             allSquares.forEach(square => square.removeEventListener) // tried MDN model of removing and it broke
             return
         }
@@ -60,8 +63,13 @@ function checkScore() {
 
         if (xWins) { // if x wins, display text
             infoDisplay.textContent = "X wins!"
+            draw = false;
             allSquares.forEach(square => square.removeEventListener) // tried MDN model of removing and it broke
             return
         }
     })
+    if (draw) {
+        // if all squares are filled and no player has won, it's a draw
+        infoDisplay.textContent = "It's a draw!";
+}
 }
